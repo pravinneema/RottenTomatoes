@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CA7BFE4193EC38C007DEB75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFE3193EC38C007DEB75 /* Foundation.framework */; };
+		7CA7BFE6193EC38C007DEB75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFE5193EC38C007DEB75 /* CoreGraphics.framework */; };
+		7CA7BFE8193EC38C007DEB75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFE7193EC38C007DEB75 /* UIKit.framework */; };
+		7CA7BFEE193EC38C007DEB75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CA7BFEC193EC38C007DEB75 /* InfoPlist.strings */; };
+		7CA7BFF0193EC38C007DEB75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA7BFEF193EC38C007DEB75 /* main.m */; };
+		7CA7BFF4193EC38C007DEB75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA7BFF3193EC38C007DEB75 /* AppDelegate.m */; };
+		7CA7BFF6193EC38C007DEB75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA7BFF5193EC38C007DEB75 /* Images.xcassets */; };
+		7CA7BFFD193EC38C007DEB75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFFC193EC38C007DEB75 /* XCTest.framework */; };
+		7CA7BFFE193EC38C007DEB75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFE3193EC38C007DEB75 /* Foundation.framework */; };
+		7CA7BFFF193EC38C007DEB75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA7BFE7193EC38C007DEB75 /* UIKit.framework */; };
+		7CA7C007193EC38C007DEB75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CA7C005193EC38C007DEB75 /* InfoPlist.strings */; };
+		7CA7C009193EC38C007DEB75 /* rottendemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA7C008193EC38C007DEB75 /* rottendemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CA7C000193EC38C007DEB75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CA7BFD8193EC38C007DEB75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CA7BFDF193EC38C007DEB75;
+			remoteInfo = rottendemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7CA7BFE0193EC38C007DEB75 /* rottendemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rottendemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA7BFE3193EC38C007DEB75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7CA7BFE5193EC38C007DEB75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7CA7BFE7193EC38C007DEB75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7CA7BFEB193EC38C007DEB75 /* rottendemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rottendemo-Info.plist"; sourceTree = "<group>"; };
+		7CA7BFED193EC38C007DEB75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CA7BFEF193EC38C007DEB75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7CA7BFF1193EC38C007DEB75 /* rottendemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rottendemo-Prefix.pch"; sourceTree = "<group>"; };
+		7CA7BFF2193EC38C007DEB75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7CA7BFF3193EC38C007DEB75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7CA7BFF5193EC38C007DEB75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7CA7BFFB193EC38C007DEB75 /* rottendemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rottendemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA7BFFC193EC38C007DEB75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7CA7C004193EC38C007DEB75 /* rottendemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rottendemoTests-Info.plist"; sourceTree = "<group>"; };
+		7CA7C006193EC38C007DEB75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CA7C008193EC38C007DEB75 /* rottendemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rottendemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CA7BFDD193EC38C007DEB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7BFE6193EC38C007DEB75 /* CoreGraphics.framework in Frameworks */,
+				7CA7BFE8193EC38C007DEB75 /* UIKit.framework in Frameworks */,
+				7CA7BFE4193EC38C007DEB75 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CA7BFF8193EC38C007DEB75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7BFFD193EC38C007DEB75 /* XCTest.framework in Frameworks */,
+				7CA7BFFF193EC38C007DEB75 /* UIKit.framework in Frameworks */,
+				7CA7BFFE193EC38C007DEB75 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7CA7BFD7193EC38C007DEB75 = {
+			isa = PBXGroup;
+			children = (
+				7CA7BFE9193EC38C007DEB75 /* rottendemo */,
+				7CA7C002193EC38C007DEB75 /* rottendemoTests */,
+				7CA7BFE2193EC38C007DEB75 /* Frameworks */,
+				7CA7BFE1193EC38C007DEB75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7CA7BFE1193EC38C007DEB75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7BFE0193EC38C007DEB75 /* rottendemo.app */,
+				7CA7BFFB193EC38C007DEB75 /* rottendemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CA7BFE2193EC38C007DEB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7BFE3193EC38C007DEB75 /* Foundation.framework */,
+				7CA7BFE5193EC38C007DEB75 /* CoreGraphics.framework */,
+				7CA7BFE7193EC38C007DEB75 /* UIKit.framework */,
+				7CA7BFFC193EC38C007DEB75 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CA7BFE9193EC38C007DEB75 /* rottendemo */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7BFF2193EC38C007DEB75 /* AppDelegate.h */,
+				7CA7BFF3193EC38C007DEB75 /* AppDelegate.m */,
+				7CA7BFF5193EC38C007DEB75 /* Images.xcassets */,
+				7CA7BFEA193EC38C007DEB75 /* Supporting Files */,
+			);
+			path = rottendemo;
+			sourceTree = "<group>";
+		};
+		7CA7BFEA193EC38C007DEB75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7BFEB193EC38C007DEB75 /* rottendemo-Info.plist */,
+				7CA7BFEC193EC38C007DEB75 /* InfoPlist.strings */,
+				7CA7BFEF193EC38C007DEB75 /* main.m */,
+				7CA7BFF1193EC38C007DEB75 /* rottendemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CA7C002193EC38C007DEB75 /* rottendemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7C008193EC38C007DEB75 /* rottendemoTests.m */,
+				7CA7C003193EC38C007DEB75 /* Supporting Files */,
+			);
+			path = rottendemoTests;
+			sourceTree = "<group>";
+		};
+		7CA7C003193EC38C007DEB75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CA7C004193EC38C007DEB75 /* rottendemoTests-Info.plist */,
+				7CA7C005193EC38C007DEB75 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CA7BFDF193EC38C007DEB75 /* rottendemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CA7C00C193EC38C007DEB75 /* Build configuration list for PBXNativeTarget "rottendemo" */;
+			buildPhases = (
+				7CA7BFDC193EC38C007DEB75 /* Sources */,
+				7CA7BFDD193EC38C007DEB75 /* Frameworks */,
+				7CA7BFDE193EC38C007DEB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rottendemo;
+			productName = rottendemo;
+			productReference = 7CA7BFE0193EC38C007DEB75 /* rottendemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CA7BFFA193EC38C007DEB75 /* rottendemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CA7C00F193EC38C007DEB75 /* Build configuration list for PBXNativeTarget "rottendemoTests" */;
+			buildPhases = (
+				7CA7BFF7193EC38C007DEB75 /* Sources */,
+				7CA7BFF8193EC38C007DEB75 /* Frameworks */,
+				7CA7BFF9193EC38C007DEB75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CA7C001193EC38C007DEB75 /* PBXTargetDependency */,
+			);
+			name = rottendemoTests;
+			productName = rottendemoTests;
+			productReference = 7CA7BFFB193EC38C007DEB75 /* rottendemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CA7BFD8193EC38C007DEB75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Pravin Neema";
+				TargetAttributes = {
+					7CA7BFFA193EC38C007DEB75 = {
+						TestTargetID = 7CA7BFDF193EC38C007DEB75;
+					};
+				};
+			};
+			buildConfigurationList = 7CA7BFDB193EC38C007DEB75 /* Build configuration list for PBXProject "rottendemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7CA7BFD7193EC38C007DEB75;
+			productRefGroup = 7CA7BFE1193EC38C007DEB75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CA7BFDF193EC38C007DEB75 /* rottendemo */,
+				7CA7BFFA193EC38C007DEB75 /* rottendemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CA7BFDE193EC38C007DEB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7BFEE193EC38C007DEB75 /* InfoPlist.strings in Resources */,
+				7CA7BFF6193EC38C007DEB75 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CA7BFF9193EC38C007DEB75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7C007193EC38C007DEB75 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CA7BFDC193EC38C007DEB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7BFF4193EC38C007DEB75 /* AppDelegate.m in Sources */,
+				7CA7BFF0193EC38C007DEB75 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CA7BFF7193EC38C007DEB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA7C009193EC38C007DEB75 /* rottendemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CA7C001193EC38C007DEB75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CA7BFDF193EC38C007DEB75 /* rottendemo */;
+			targetProxy = 7CA7C000193EC38C007DEB75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7CA7BFEC193EC38C007DEB75 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CA7BFED193EC38C007DEB75 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7CA7C005193EC38C007DEB75 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CA7C006193EC38C007DEB75 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CA7C00A193EC38C007DEB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CA7C00B193EC38C007DEB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CA7C00D193EC38C007DEB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rottendemo/rottendemo-Prefix.pch";
+				INFOPLIST_FILE = "rottendemo/rottendemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7CA7C00E193EC38C007DEB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rottendemo/rottendemo-Prefix.pch";
+				INFOPLIST_FILE = "rottendemo/rottendemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7CA7C010193EC38C007DEB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rottendemo.app/rottendemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rottendemo/rottendemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "rottendemoTests/rottendemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7CA7C011193EC38C007DEB75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rottendemo.app/rottendemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rottendemo/rottendemo-Prefix.pch";
+				INFOPLIST_FILE = "rottendemoTests/rottendemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CA7BFDB193EC38C007DEB75 /* Build configuration list for PBXProject "rottendemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CA7C00A193EC38C007DEB75 /* Debug */,
+				7CA7C00B193EC38C007DEB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CA7C00C193EC38C007DEB75 /* Build configuration list for PBXNativeTarget "rottendemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CA7C00D193EC38C007DEB75 /* Debug */,
+				7CA7C00E193EC38C007DEB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7CA7C00F193EC38C007DEB75 /* Build configuration list for PBXNativeTarget "rottendemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CA7C010193EC38C007DEB75 /* Debug */,
+				7CA7C011193EC38C007DEB75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CA7BFD8193EC38C007DEB75 /* Project object */;
+}

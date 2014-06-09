@@ -13,10 +13,10 @@ I am able to do following tasks:
 5. User sees error message when there's a networking error.  You may not use UIAlertView to display the error.  See this screenshot for what the error message should look like: network error screenshot.
 6. User can pull to refresh the movie list.
 7. All images fade in 
+8. I am not able to put footer bar for movie and dvd.
 
 Issue:
 I am not sure I am using correct way to show detail view.
-I am not able to put footer bar for movie and dvd.
 When I refresh page then images are miss position.
 On detail page page is also moving with scroll and not able to provide scroll on synopsis.
 Didn't put back button on head on detail view.

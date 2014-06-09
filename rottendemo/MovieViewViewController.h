@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieViewViewController : UIViewController
+@interface MovieViewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 
 @end

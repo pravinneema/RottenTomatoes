@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MovieViewViewController.h"
+#import "TopDVDViewController.h"
 
 @implementation AppDelegate
 
@@ -14,6 +16,28 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    MovieViewViewController *vc = [[MovieViewViewController alloc]init];
+    UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+    TopDVDViewController *vc2 = [[TopDVDViewController alloc]init];
+    UINavigationController *nvc2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+    
+    // Create the tab bar controller
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers=@[nvc, nvc2];
+    tabBarController.view.frame = CGRectMake(0,0,320,460);
+    
+    nvc.tabBarItem.title = @"Box Office";
+//    nvc.tabBarItem.image = [UIImage imageNamed:@"House"];
+    
+    nvc2.tabBarItem.title = @"Top Dvd";
+//    nvc2.tabBarItem.image = [UIImage imageNamed:@"House"];
+    
+    
+    self.window.rootViewController = tabBarController;
+//    [self.window.rootViewController addChildViewController: tabBarController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -45,5 +69,4 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 @end

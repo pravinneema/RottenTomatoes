@@ -7,6 +7,8 @@
 //
 
 #import "MovieDetailViewController.h"
+#import "UIImageView+AFNetworking.h"
+
 
 @interface MovieDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
@@ -22,6 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+         self.title = @"Detail";
     }
     return self;
 }
@@ -29,7 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSURL *posterUrl = [NSURL URLWithString:[self.movie valueForKeyPath:@"posters.original"]];
+    [self.posterView setImageWithURL:posterUrl];
+    
+    self.titleLabel.text = self.movie[@"title"];
+    self.title = self.movie[@"title"];
+    self.synopsisLabel.text = self.movie[@"synopsis"];
 }
 
 - (void)didReceiveMemoryWarning

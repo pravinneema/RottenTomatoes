@@ -10,16 +10,12 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "MovieDetailViewController.h"
 
 @interface MovieViewViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
-
-@property (weak, nonatomic) IBOutlet UIView *detailView;
-@property (weak, nonatomic) IBOutlet UIImageView *_detailMoviePoster;
-@property (weak, nonatomic) IBOutlet UILabel *movieDetailTitle;
-@property (weak, nonatomic) IBOutlet UILabel *detailSynopsisLabel;
 
 @property (strong, nonatomic) UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) UIView *fixedTableFooterView;
@@ -119,29 +115,12 @@
     
 //    NSLog(@"The select object is : %@", movie);
     
-    NSString *imageUrl = movie[@"posters"][@"original"];
-    NSURL *url = [NSURL URLWithString:imageUrl];
-    [self._detailMoviePoster setImageWithURL:url];
+    MovieDetailViewController *vc = [[MovieDetailViewController alloc] init];
+    vc.movie = movie;
     
-    self._detailMoviePoster.center = CGPointMake(100, 100);
-    self._detailMoviePoster.alpha = 0.0;
-    [UIView animateWithDuration:5.0 animations:^{
-        self._detailMoviePoster.alpha = 1.0;
-    }];
-    
-    self.title = movie[@"title"];
-    
-    self.detailSynopsisLabel.text = movie[@"synopsis"];
-    self.movieDetailTitle.text = movie[@"title"];
-    
-    [self animateView];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void) animateView {
-    [UIView animateWithDuration:0.5 animations:^{
-        self.detailView.frame = CGRectMake(0, 0, 320, 600);
-    }];
-}
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

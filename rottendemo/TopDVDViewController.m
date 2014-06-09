@@ -10,6 +10,7 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "MovieDetailViewController.h"
 
 @interface TopDVDViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *TopDvdTableView;
@@ -101,36 +102,17 @@
     return self.movies.count;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    NSDictionary *movie = self.movies[indexPath.row];
-//    
-//    //    NSLog(@"The select object is : %@", movie);
-//    
-//    NSString *imageUrl = movie[@"posters"][@"original"];
-//    NSURL *url = [NSURL URLWithString:imageUrl];
-//    [self._detailMoviePoster setImageWithURL:url];
-//    
-//    self._detailMoviePoster.center = CGPointMake(100, 100);
-//    self._detailMoviePoster.alpha = 0.0;
-//    [UIView animateWithDuration:5.0 animations:^{
-//        self._detailMoviePoster.alpha = 1.0;
-//    }];
-//    
-//    self.title = movie[@"title"];
-//    
-//    self.detailSynopsisLabel.text = movie[@"synopsis"];
-//    self.movieDetailTitle.text = movie[@"title"];
-//    
-//    [self animateView];
-//}
-//
-//-(void) animateView {
-//    [UIView animateWithDuration:0.5 animations:^{
-//        self.detailView.frame = CGRectMake(0, 0, 320, 600);
-//    }];
-//}
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *movie = self.movies[indexPath.row];
+    
+    //    NSLog(@"The select object is : %@", movie);
+    
+    MovieDetailViewController *vc = [[MovieDetailViewController alloc] init];
+    vc.movie = movie;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];

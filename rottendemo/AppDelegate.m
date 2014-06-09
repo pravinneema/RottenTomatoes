@@ -29,10 +29,10 @@
     tabBarController.view.frame = CGRectMake(0,0,320,460);
     
     nvc.tabBarItem.title = @"Box Office";
-//    nvc.tabBarItem.image = [UIImage imageNamed:@"House"];
+    nvc.tabBarItem.image = [UIImage imageNamed:@"BoxOffice"];
     
     nvc2.tabBarItem.title = @"Top Dvd";
-//    nvc2.tabBarItem.image = [UIImage imageNamed:@"House"];
+    nvc2.tabBarItem.image = [UIImage imageNamed:@"TopDvd"];
     
     
     self.window.rootViewController = tabBarController;

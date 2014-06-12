@@ -13,6 +13,7 @@ User Story completed:
 4. User sees error message when there's a networking error.
 5. User can pull to refresh the movie list.
 6. All images fade in (optional)
+7. Add a tab bar for Box Office and DVD. (optional)
 
 # Installation
 1. Clone the project

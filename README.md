@@ -14,18 +14,17 @@ User Story completed:
 5. User can pull to refresh the movie list.
 6. All images fade in (optional)
 
-Installation
-============
-
+# Installation
 1. Clone the project
 2. Install dependencies using CocoaPods
-    pod install
+
+  `` pod install ``
 
 Walkthrough
 =============
 
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-Libraries Used
-==============
-1. AFNetworking
-2. MMProgressHUD
+# Libraries Used
+1. [AFNetworking](http://afnetworking.com/)
+2. [MMProgressHUD](https://github.com/mutualmobile/MMProgressHUD)

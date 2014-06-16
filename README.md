@@ -16,7 +16,7 @@ User Story completed:
 7. All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
 8. Add a tab bar for Box Office and DVD. (optional)
 9. Customize the highlight and selection effect of the cell. (optional)
-10. Add a search bar. (optional)
+10.Customize the navigation bar. (optional)
 11. Add a search bar. (optional)
 
 # Installation

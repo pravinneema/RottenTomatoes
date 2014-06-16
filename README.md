@@ -13,7 +13,11 @@ User Story completed:
 4. User sees error message when there's a networking error.
 5. User can pull to refresh the movie list.
 6. All images fade in (optional)
-7. Add a tab bar for Box Office and DVD. (optional)
+7. All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
+8. Add a tab bar for Box Office and DVD. (optional)
+9. Customize the highlight and selection effect of the cell. (optional)
+10. Add a search bar. (optional)
+11. Add a search bar. (optional)
 
 # Installation
 1. Clone the project
@@ -28,4 +32,4 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Libraries Used
 1. [AFNetworking](http://afnetworking.com/)
-2. [MMProgressHUD](https://github.com/mutualmobile/MMProgressHUD)
+2. [MBProgressHUD](https://github.com/mutualmobile/MMProgressHUD)

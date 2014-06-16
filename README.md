@@ -3,7 +3,7 @@ RottenTomatoes
 
 A Simple IOS app for Rotten Tomatoes Movie Listing Box office and Top DVD.
 
-Total Time Spent : 8 hrs
+Total Time Spent : 14 hrs
 
 User Story completed:
 

@@ -28,6 +28,7 @@ User Story completed:
 Walkthrough
 =============
 ![Video Walkthrough](https://raw.githubusercontent.com/pravinneema/RottenTomatoes/master/Demo.gif)
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Libraries Used

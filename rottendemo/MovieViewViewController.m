@@ -8,20 +8,24 @@
 
 #import "MovieViewViewController.h"
 #import "MovieCell.h"
-#import "UIImageView+AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "MovieDetailViewController.h"
 
 @interface MovieViewViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *movies;
+
+@property (strong, nonatomic) NSMutableArray* movies;
+@property (strong, nonatomic) NSMutableArray* filteredMovieData;
+
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @property (strong, nonatomic) UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) UIView *fixedTableFooterView;
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
+@property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property BOOL isFiltered;
 @end
 
 @implementation MovieViewViewController
@@ -30,7 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Movies";
+        self.title = @"Box Office";
     }
     return self;
 }
@@ -46,7 +50,7 @@
     [self loadData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 110;
     
     UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 55, 0, 0)];
     [self.tableView insertSubview:refreshView atIndex:0]; //the tableView is a IBOutlet
@@ -56,12 +60,20 @@
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44.0)];
+    self.searchBar.delegate = self;
+    self.searchBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
+    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.tableView.tableHeaderView = self.searchBar;
+    
+    
+    self.tableView.tableHeaderView = self.searchBar;
 }
 
 -(void) loadData{
     self.errorLabel.hidden=true;
     
-    NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=856vhx7bdp3w6g3f5snceash";
+    NSString *url= @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=856vhx7bdp3w6g3f5snceash";
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -89,14 +101,11 @@
 
 - (void)stopRefresh
 {
-    NSLog(@"StopRefreshing");
     [self.refreshControl endRefreshing];
 }
 
 -(void) refresh:(id)sender{
-    NSLog(@"Loading new data");
     [self loadData];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,18 +115,27 @@
 }
 
 -(int) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.movies.count;
+    int rowCount;
+    if(self.isFiltered)
+        rowCount = self.filteredMovieData.count;
+    else
+        rowCount = self.movies.count;
+    
+    return rowCount;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *movie = self.movies[indexPath.row];
     
-//    NSLog(@"The select object is : %@", movie);
-    
     MovieDetailViewController *vc = [[MovieDetailViewController alloc] init];
     vc.movie = movie;
     
+    UITableViewCell* tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
+    [tableViewCell setSelected:NO animated:YES]; // <-- setSelected instead of setHighlighted
+
+    [self.view endEditing:true];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -126,24 +144,75 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
-    NSDictionary *movie = self.movies[indexPath.row];
-    cell.movieTitleLable.text = movie[@"title"];
-    cell.synopsisLable.text = movie[@"synopsis"];
+    NSDictionary *movie;
 
-    NSDictionary *posters = movie[@"posters"];
     
-    NSString *imageUrl = posters[@"thumbnail"];
-    NSURL *url = [NSURL URLWithString:imageUrl];
-    [cell.posterView setImageWithURL:url];
+    if(self.isFiltered)
+        movie = self.filteredMovieData[indexPath.row];
+    else
+        movie = self.movies[indexPath.row];
     
-    cell.posterView.center = CGPointMake(100, 100);
-    cell.posterView.alpha = 0.0;
-    [UIView animateWithDuration:5.0 animations:^{
-        cell.posterView.alpha = 1.0;
-    }];
+    [cell setMovie:movie];
     
+    UIImageView *bgView = [[UIImageView alloc]initWithFrame:cell.frame];
+    bgView.backgroundColor = [UIColor grayColor];
+    cell.selectedBackgroundView = bgView;
+    
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.selected = NO;
+    BOOL isSelectedPath =
+    [indexPath compare:[tableView indexPathForSelectedRow]] == NSOrderedSame;
+    cell.accessoryType = isSelectedPath ?
+    UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryType = UITableViewCellAccessoryNone;
+}
+
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText
+{
+    NSLog(@"Search Movies");
+    
+    if(searchText.length == 0)
+    {
+        self.isFiltered = FALSE;
+    }
+    else
+    {
+        self.filteredMovieData = [[NSMutableArray alloc] init];
+        
+        for (int i=0; i < [self.movies count]; i++) {
+            NSString *movieTitle = self.movies[i][@"title"];
+            NSRange range = [movieTitle rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            
+            if(range.length)
+            {
+                [self.filteredMovieData addObject:self.movies[i]];
+                self.isFiltered = true;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    
+    searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.view endEditing:TRUE];
+}
 @end

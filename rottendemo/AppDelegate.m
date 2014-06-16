@@ -19,24 +19,26 @@
     
     MovieViewViewController *vc = [[MovieViewViewController alloc]init];
     UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];
+    nvc.title = @"Box Office";
+    nvc.tabBarItem.image = [UIImage imageNamed:@"BoxOffice"];
+    nvc.navigationBar.barTintColor = [UIColor lightGrayColor];
+
     
     TopDVDViewController *vc2 = [[TopDVDViewController alloc]init];
     UINavigationController *nvc2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+    nvc2.title = @"Top Dvd";
+    nvc2.tabBarItem.image = [UIImage imageNamed:@"TopDvd"];
+    nvc2.navigationBar.barTintColor = [UIColor lightGrayColor];
     
     // Create the tab bar controller
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers=@[nvc, nvc2];
-    tabBarController.view.frame = CGRectMake(0,0,320,460);
-    
-    nvc.tabBarItem.title = @"Box Office";
-    nvc.tabBarItem.image = [UIImage imageNamed:@"BoxOffice"];
-    
-    nvc2.tabBarItem.title = @"Top Dvd";
-    nvc2.tabBarItem.image = [UIImage imageNamed:@"TopDvd"];
-    
+
+    tabBarController.tabBar.tintColor = [UIColor blackColor];
+    tabBarController.tabBar.translucent = false;
+    tabBarController.tabBar.barTintColor = [UIColor lightGrayColor];
     
     self.window.rootViewController = tabBarController;
-//    [self.window.rootViewController addChildViewController: tabBarController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

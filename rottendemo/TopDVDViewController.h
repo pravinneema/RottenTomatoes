@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopDVDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TopDVDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @end

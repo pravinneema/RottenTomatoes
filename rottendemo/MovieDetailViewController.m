@@ -43,6 +43,9 @@
     self.titleLabel.text = self.movie[@"title"];
     self.title = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"synopsis"];
+    
+    [self.synopsisLabel sizeToFit];
+    self.movieDescriptionScrollView.contentSize = CGSizeMake(320, self.synopsisLabel.frame.size.height + 200);
 }
 
 - (void)updateFrameSize:(UIView *)view :(CGSize)size {

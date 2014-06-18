@@ -64,10 +64,10 @@
     self.searchBar.delegate = self;
     self.searchBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
     self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.searchBar.backgroundColor = [UIColor blackColor];
     self.tableView.tableHeaderView = self.searchBar;
     
     
-    self.tableView.tableHeaderView = self.searchBar;
 }
 
 -(void) loadData{
